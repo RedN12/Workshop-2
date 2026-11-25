@@ -58,6 +58,12 @@ form.addEventListener("submit", (event) => {
     return;
   }
 
+  if (idade < 16) {
+    mensagemEl.textContent = "O participante deve ter pelo menos 16 anos.";
+    mensagemEl.className = "mensagem erro";
+    return;
+  }
+
   const valor = calcularValorInscricao(estudante);
   inscritos.push({ nome, idade, estudante, valor });
 
